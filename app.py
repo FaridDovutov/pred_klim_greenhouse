@@ -33,7 +33,7 @@ def load_and_clean_data():
     if 't_heat_sp' not in categorical_cols and 't_heat_sp' in df.columns:
         categorical_cols.append('t_heat_sp')
         
-   df[categorical_cols] = df[categorical_cols].ffill().bfill()
+    df[categorical_cols] = df[categorical_cols].ffill().bfill()
     
     # Тозакунии боқимондаҳо бо медиана
     df = df.fillna(df.median(numeric_only=True))
